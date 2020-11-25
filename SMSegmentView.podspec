@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "SMSegmentView"
-  s.version      = "0.0.2"
+  s.version      = "2.0.0"
   s.summary      = "Custom segmented control for iOS 7 and above"
 
   s.description  = <<-DESC
@@ -14,9 +14,9 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/allenbryan11/SMSegmentView"
   s.license      = { :type => "MIT", :file => "LICENSE.md" }
   s.author       = "allenbryan11"
-  s.platform     = :ios, "7.0"
+  s.platform     = :ios, "12.0"
 
-  s.ios.deployment_target = "7.0"
+  s.ios.deployment_target = "12.0"
 
   s.source       = { :git => "https://github.com/allenbryan11/SMSegmentView.git", :branch => "master" }
 
