@@ -30,7 +30,7 @@ open class SMSegment: UIView {
     
     internal var didSelectSegment: ((_ segment: SMSegment)->())?
     
-    internal(set) var index: Int = 0
+    var index: Int = 0
     private(set) var isSelected: Bool = false
     
     
