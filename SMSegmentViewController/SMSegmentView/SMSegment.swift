@@ -67,6 +67,10 @@ open class SMSegment: UIView {
             self.label.textColor = appearance.titleOffSelectionColour
         }
         self.imageView.image = self.offSelectionImage
+        
+        if #available(iOS 13.4, *) {
+            self.addInteraction(UIPointerInteraction(delegate: self))
+        }
     }
     
     
@@ -213,5 +217,16 @@ open class SMSegment: UIView {
                 self.backgroundColor = self.appearance?.segmentOnSelectionColour
             }
         }
+    }
+}
+
+@available(iOS 13.4, *)
+extension SMSegment: UIPointerInteractionDelegate {
+    public func pointerInteraction(_ interaction: UIPointerInteraction, styleFor region: UIPointerRegion) -> UIPointerStyle? {
+        guard let interactionView = interaction.view else {
+            return nil
+        }
+
+        return UIPointerStyle(effect: UIPointerEffect.highlight(UITargetedPreview(view: interactionView)))
     }
 }
